@@ -19,14 +19,17 @@ class App extends Component {
 render() {   
   return (  
     <Router>
-    <div className="App">
       <Header />
+      <div className="wrapper">
+      <div className="App">
+      
       <Route exact path="/" render={props => (
       <React.Fragment>                             
         <BreweryList brewList={this.state.brewery} />
       </React.Fragment>)} />
       <Route path='/:handle' component={About} />      
     </div>
+      </div>
     </Router>
   );
 }

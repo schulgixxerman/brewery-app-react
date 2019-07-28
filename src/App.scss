@@ -3,34 +3,70 @@ $background: $grey;
 $lightgrey: #4E4E50;
 $textone: #6F2232;
 $texttwo: #950740;
-$textthree: #C3073F;
+$textthree: white;
 
-.wrapper {
-  width:500px;
-  border: 1px solid black;
-  overflow: hidden;
+.googleWrapper {
+  border-radius: 75px;
 }
 .firstDiv {
   width: 300px;
-  float: left;
-  border: 1px solid red;  
+  float: left;  
+  background-color:white;
+  border-radius:75px;
+  padding:25px;
 }
 .secondDiv {
-  border: 1px solid green;
-  overflow: hidden;
+padding-left: 25px;
+overflow: hidden;
 
 }
-p {
-  font-weight:bold;
-  color: $textthree;
+.awesomePin {
+  width:25px;
+  height:25px;
+  border:1px solid red;
 }
-.brewBorder {
-  padding:5px;
-  border: 1px solid black;
-  background-color: $grey;
+.webLink {
+  padding-top:10px;
+  background-color:white;
+  border-radius:75px;
+  padding: 10px;
 }
+.address {
+  text-align:right;    
+}
+.addressTitle {
+  text-decoration:underline;
+}
+.detailsLinkTitle {
+  font-size:18px;
+  font-weight:700;
+}
+.linkTitle {  
+  background-color:$lightgrey;
+  border-radius:75px;
+  padding: 10px;
+  font-size:18px;
+  font-weight:700;
+  color:white;  
+  text-align:center;
+  text-decoration:none !important;  
+  color:white;
+}
+  .brewBorder {
+    padding:30px;
+     border: 1px solid black;
+      background-color: white;  
+      width:35%;
+      border-radius:75px;  
+  margin:10px;
+  background-image: url(./content/background-beer.jpg);  
+  background-repeat: no-repeat;   
+  }
 .App {
   text-align: center;
+  padding: 25px 150px 25px 150px;
+  background-image: url(./content/background-carpentry.jpg);  
+  opacity:.8;
 }
 
 .App-logo {
@@ -48,6 +84,7 @@ p {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  opacity: .5;
 }
 
 .App-link {

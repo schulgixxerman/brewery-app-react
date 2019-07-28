@@ -7,31 +7,23 @@ export class BreweryListItem extends Component {
         return (
             //inline styles use double {{}}
             <div className="brewBorder">
-                <Link to= {name}>Details</Link>            
+                
+                <span className="title">
+                <Link className="linkTitle" to= {name}>{name} | { brewery_type }</Link>            
+                </span>                                
+                <p className="address">
+                    <span className="addressTitle">Address:</span>
                 <p>
-                Name: { name }                
+                <p><span>{ street } </span></p>
+                <p><span>{ city }, { state } </span></p>
+                <span>{ postal_code } </span>
+                <span>{ country } </span>
                 </p>
-                <p>
-                Type: { brewery_type }
                 </p>
-                <p>
-                Street: { street } 
-                </p>
-                <p>
-                City:  { city }
-                </p>
-                <p>
-                State: { state }
-                </p>
-                <p>
-                Zip:   { postal_code }
-                </p>
-                <p>
-                 Country:   { country }
-                </p>
-                <p>
-                Website:    <a href={ website_url }> { website_url } </a>
-                </p>
+
+                <span className="webLink">
+                <a href={ website_url }> { website_url } </a>
+                </span>
             </div>
         )
     }
