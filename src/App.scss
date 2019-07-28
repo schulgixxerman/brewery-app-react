@@ -1,0 +1,64 @@
+$grey: #1A1A1D;
+$background: $grey;
+$lightgrey: #4E4E50;
+$textone: #6F2232;
+$texttwo: #950740;
+$textthree: #C3073F;
+
+.wrapper {
+  width:500px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.firstDiv {
+  width: 300px;
+  float: left;
+  border: 1px solid red;  
+}
+.secondDiv {
+  border: 1px solid green;
+  overflow: hidden;
+
+}
+p {
+  font-weight:bold;
+  color: $textthree;
+}
+.brewBorder {
+  padding:5px;
+  border: 1px solid black;
+  background-color: $grey;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: $lightgrey;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

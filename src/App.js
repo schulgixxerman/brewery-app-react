@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './components/layout/Header';
+import BreweryList from './components/BreweryList';
+import About from './components/BreweryDetailsApp';
+import axios from 'axios';
+import './App.scss';
 
-function App() {
-  return (
+class App extends Component {
+  state = { 
+    brewery: [
+
+    ]
+  }
+  componentDidMount() {
+    axios.get('https://api.openbrewerydb.org/breweries?by_city=harrisburg').then(res => this.setState({ brewery: res.data }))
+  }
+
+render() {   
+  return (  
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Route exact path="/" render={props => (
+      <React.Fragment>                             
+        <BreweryList brewList={this.state.brewery} />
+      </React.Fragment>)} />
+      <Route path='/:handle' component={About} />      
     </div>
+    </Router>
   );
 }
-
+}
 export default App;
