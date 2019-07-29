@@ -1,4 +1,4 @@
-$grey: #1A1A1D;
+$grey: #333;
 $background: $grey;
 $lightgrey: #4E4E50;
 $textone: #6F2232;
@@ -20,10 +20,12 @@ padding-left: 25px;
 overflow: hidden;
 
 }
-.awesomePin {
-  width:25px;
-  height:25px;
-  border:1px solid red;
+.errorMessage {
+  font-size: 24px;
+  color:white;
+  
+  border-radius:75px;
+  background-color:$lightgrey;
 }
 .webLink {
   padding-top:10px;
@@ -41,6 +43,9 @@ overflow: hidden;
   font-size:18px;
   font-weight:700;
 }
+.linkTitle:hover{  
+background-color:$grey;
+}
 .linkTitle {  
   background-color:$lightgrey;
   border-radius:75px;
@@ -49,8 +54,7 @@ overflow: hidden;
   font-weight:700;
   color:white;  
   text-align:center;
-  text-decoration:none !important;  
-  color:white;
+  text-decoration:none !important;    
 }
   .brewBorder {
     padding:30px;
@@ -68,25 +72,6 @@ overflow: hidden;
   background-image: url(./content/background-carpentry.jpg);  
   opacity:.8;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: $lightgrey;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  opacity: .5;
-}
-
 .App-link {
   color: #61dafb;
 }

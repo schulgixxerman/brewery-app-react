@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import BreweryDetails from './BreweryDetails';
 
-export class AppDetails extends Component {
+export class BreweryDetailsApp extends Component {
     state = { 
         brewery: [
     
@@ -22,4 +22,4 @@ export class AppDetails extends Component {
       }
 }
 
-export default AppDetails
+export default BreweryDetailsApp

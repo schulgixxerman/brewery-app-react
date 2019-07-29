@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 
 export class BreweryDetailsItem extends Component {
 
@@ -9,11 +9,11 @@ export class BreweryDetailsItem extends Component {
             width: '50%',
             height: '50%'
         };
-        const { id, name, brewery_type, street, city, state, postal_code, country, latitude, longitude, website_url } = this.props.brewList;
-        const Marker = props => {
-            return <div className="AwesomePin"></div>
+        const { id, name, street, city, state, postal_code, latitude, longitude, } = this.props.brewList;        
+        this.showMap = false;
+        if (latitude != null) {
+            this.showMap = true;
         }
-
         return (                           
                 <div className="" style={{ height: '100vh', width: '100%' }}>                                    
                 <div className="firstDiv">
@@ -32,12 +32,23 @@ export class BreweryDetailsItem extends Component {
                 <Link class="linkTitle" to="/">Home</Link>
                     </div>  
                 <div className="secondDiv">
-                <Map // TODO: CODE ERROR SITUATIONS WHEN NO LAT/LONG IS GIVEN
-                     google={this.props.google}
-                     zoom={14}
-                     style={mapStyles}
-                     initialCenter= {{ lat: latitude, lng: longitude }}                                                                        
-                />
+                {this.showMap ? (
+                                     <Map 
+                                     google={this.props.google}
+                                     zoom={14}
+                                     style={mapStyles}
+                                     initialCenter= {{ lat: latitude, lng: longitude }}                                                                                                            
+                                >
+                                               <Marker
+                                onClick = { this.onMarkerClick }
+                                    title = { name }
+                                position = {{ lat: latitude, lng: longitude }}
+                                name = { name }
+                                /> 
+                                </Map>
+                ) : (
+                    <p className="errorMessage">*** ERROR *** Latitude/Longitude values are not present in BreweryDB!</p>
+                )}                                                                      
                 </div>
             }
             </div>
