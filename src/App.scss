@@ -4,15 +4,18 @@ $lightgrey: #4E4E50;
 $textone: #6F2232;
 $texttwo: #950740;
 $textthree: white;
+$fontSizeMedium: 18px;
+$fontSizeLarge: 24px;
+$standardRadius: 75px;
 
 .googleWrapper {
-  border-radius: 75px;
+  border-radius: $standardRadius;
 }
 .firstDiv {
   width: 300px;
   float: left;  
   background-color:white;
-  border-radius:75px;
+  border-radius: $standardRadius;
   padding:25px;
 }
 .secondDiv {
@@ -21,16 +24,15 @@ overflow: hidden;
 
 }
 .errorMessage {
-  font-size: 24px;
-  color:white;
-  
-  border-radius:75px;
+  font-size: $fontSizeLarge;
+  color:white;  
+  border-radius: $standardRadius;
   background-color:$lightgrey;
 }
 .webLink {
   padding-top:10px;
   background-color:white;
-  border-radius:75px;
+  border-radius: $standardRadius;
   padding: 10px;
 }
 .address {
@@ -40,7 +42,7 @@ overflow: hidden;
   text-decoration:underline;
 }
 .detailsLinkTitle {
-  font-size:18px;
+  font-size: $fontSizeMedium;
   font-weight:700;
 }
 .linkTitle:hover{  
@@ -48,9 +50,9 @@ background-color:$grey;
 }
 .linkTitle {  
   background-color:$lightgrey;
-  border-radius:75px;
+  border-radius: $standardRadius;
   padding: 10px;
-  font-size:18px;
+  font-size: $fontSizeMedium;
   font-weight:700;
   color:white;  
   text-align:center;
@@ -61,7 +63,7 @@ background-color:$grey;
      border: 1px solid black;
       background-color: white;  
       width:35%;
-      border-radius:75px;  
+      border-radius: $standardRadius;
   margin:10px;
   background-image: url(./content/background-beer.jpg);  
   background-repeat: no-repeat;   
