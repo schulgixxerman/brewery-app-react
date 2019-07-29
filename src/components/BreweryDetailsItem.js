@@ -16,37 +16,29 @@ export class BreweryDetailsItem extends Component {
         }
         return (                           
                 <div className="" style={{ height: '100vh', width: '100%' }}>                                    
-                <div className="firstDiv">
-                <p>
-                 <span class="detailsLinkTitle">{ name }                </span>
-                </p>                
-                <p>
-                { street } 
-                </p>
-                <p>
-                { city },  { state }
-                </p>                            
-                <p>
-                { postal_code }
-                </p>                
-                <Link class="linkTitle" to="/">Home</Link>
+                    <div className="firstDiv">
+                        <p><span class="detailsLinkTitle">{ name }</span></p>                
+                        <p>{ street }</p>
+                        <p>{ city },  { state }</p>                            
+                        <p>{ postal_code }</p>                
+                        <Link class="linkTitle" to="/">Home</Link>
                     </div>  
                 <div className="secondDiv">
-                {this.showMap ? (
-                                     <Map 
-                                     google={this.props.google}
-                                     zoom={14}
-                                     style={mapStyles}
-                                     initialCenter= {{ lat: latitude, lng: longitude }}                                                                                                            
-                                >
-                                               <Marker
+                    {this.showMap ? (
+                        <Map 
+                            google={this.props.google}
+                            zoom={14}
+                            style={mapStyles}
+                            initialCenter= {{ lat: latitude, lng: longitude }}                                                                                                            
+                        >
+                            <Marker
                                 onClick = { this.onMarkerClick }
-                                    title = { name }
+                                title = { name }
                                 position = {{ lat: latitude, lng: longitude }}
                                 name = { name }
-                                /> 
-                                </Map>
-                ) : (
+                            /> 
+                        </Map>
+                    ) : (
                     <p className="errorMessage">*** ERROR *** Latitude/Longitude values are not present in BreweryDB!</p>
                 )}                                                                      
                 </div>
